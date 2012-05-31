@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+
+  <Identity Name="d8559300-9c2a-4e42-b35b-2f02c026c2d6"
+            Publisher="CN=marcgagn"
+            Version="1.0.0.0" />
+
+  <Properties>
+    <DisplayName>MetroMarkdown</DisplayName>
+    <PublisherDisplayName>marcgagn</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <Description>MetroMarkdown</Description>
+  </Properties>
+
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+        Executable="$targetnametoken$.exe"
+        EntryPoint="MetroMarkdown.App">
+        <VisualElements
+            DisplayName="MetroMarkdown"
+            Logo="Assets\Logo.png"
+            SmallLogo="Assets\SmallLogo.png"
+            Description="MetroMarkdown"
+            ForegroundText="light"
+            BackgroundColor="#222222">
+            <DefaultTile ShowName="allLogos" />
+            <SplashScreen Image="Assets\SplashScreen.png" />
+        </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
