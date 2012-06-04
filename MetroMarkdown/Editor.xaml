@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     
-    <Grid Background="{StaticResource ApplicationPageBackgroundBrush}">
+    <Grid Name="Container" Background="{StaticResource ApplicationPageBackgroundBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="140"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -16,17 +16,18 @@
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource PageHeaderTextStyle}" Text="{Binding Title}"></TextBlock>
 
         <ScrollViewer Grid.Row="1" Style="{StaticResource HorizontalScrollViewerStyle}">
-            <Grid>
+            <Grid Name="Layout">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80*"></ColumnDefinition>
-                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition d:Width="50*"></ColumnDefinition>
+                    <ColumnDefinition d:Width="50*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Row="0" Grid.Column="0">
-                    <TextBox Name="ContentText" KeyUp="ContentTextChanged" AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding Content}"></TextBox>
+                    <RichEditBox Name="ContentText" KeyUp="ContentTextChanged" AcceptsReturn="True" TextWrapping="Wrap" IsSpellCheckEnabled="True"></RichEditBox>
                 </Grid>
 
-                <Grid Grid.Row="0" Grid.Column="1" Background="red">
-                    <TextBlock Name="Preview"></TextBlock>
+                <Grid Grid.Row="0" Grid.Column="1" Margin="40,0,0,0">
+                    <WebView Name="Preview"></WebView>
+                    <Rectangle Name="PreviewCanvas"></Rectangle>
                 </Grid>
             </Grid>     
         </ScrollViewer>
